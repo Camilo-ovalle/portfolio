@@ -1,20 +1,33 @@
 ---
-import Icon from "./Icon.astro";
+import JavascriptIcon from "../assets/icons/brand-javascript.svg?raw";
+import TypescriptIcon from "../assets/icons/brand-typescript.svg?raw";
+import ReactIcon from "../assets/icons/react-icon.svg?raw";
+import AstroIcon from "../assets/icons/astro-icon.svg?raw";
+import TailwindIcon from "../assets/icons/tailwind-icon.svg?raw";
+import NodejsIcon from "../assets/icons/nodejs-icon.svg?raw";
+import LinuxIcon from "../assets/icons/brand-ubuntu.svg?raw";
+import NextjsIcon from "../assets/icons/brand-nextjs.svg?raw";
+import SqlIcon from "../assets/icons/file-type-sql.svg?raw";
+import DockerIcon from "../assets/icons/brand-docker.svg?raw";
+import GitIcon from "../assets/icons/brand-git.svg?raw";
+import AzureIcon from "../assets/icons/brand-azure.svg?raw";
+import MysqlIcon from "../assets/icons/brand-mysql.svg?raw";
+
 
 const technologies = [
-  { name: "javascript", label: "JavaScript" },
-  { name: "typescript", label: "TypeScript" },
-  { name: "react", label: "React" },
-  { name: "astro", label: "Astro" },
-  { name: "tailwind", label: "Tailwind CSS" },
-  { name: "nodejs", label: "Node.js" },
-  { name: "linux", label: "Linux" },
-  { name: "nextjs", label: "Next.js" },
-  { name: "sql", label: "SQL" },
-  { name: "mysql", label: "MySQL" },
-  { name: "docker", label: "Docker" },
-  { name: "git", label: "Git" },
-  { name: "azure", label: "Azure" },
+  { svg: JavascriptIcon, label: "JavaScript" },
+  { svg: TypescriptIcon, label: "TypeScript" },
+  { svg: ReactIcon, label: "React" },
+  { svg: AstroIcon, label: "Astro" },
+  { svg: TailwindIcon, label: "Tailwind CSS" },
+  { svg: NodejsIcon, label: "Node.js" },
+  { svg: LinuxIcon, label: "Linux" },
+  { svg: NextjsIcon, label: "Next.js" },
+  { svg: SqlIcon, label: "SQL" },
+  { svg: MysqlIcon, label: "MySQL" },
+  { svg: DockerIcon, label: "Docker" },
+  { svg: GitIcon, label: "Git" },
+  { svg: AzureIcon, label: "Azure" },
 ];
 
 // Duplicamos para el efecto de carrusel infinito
@@ -30,7 +43,7 @@ const extendedTechnologies = [...technologies, ...technologies, ...technologies,
       <div class="animate-scroll flex min-w-full shrink-0 items-center gap-16">
         {extendedTechnologies.map((tech) => (
           <div class="flex-shrink-0 w-24 text-center">
-            <Icon name={tech.name} size={48} class="mx-auto text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors duration-300" />
+            <div class="h-12 w-12 mx-auto text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors duration-300" set:html={tech.svg} />
             <p class="mt-2 text-sm font-semibold">{tech.label}</p>
           </div>
         ))}
