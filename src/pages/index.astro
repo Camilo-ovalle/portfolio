@@ -1,16 +1,27 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import TechStack from '../components/TechStack.astro';
+import ProjectsGrid from '../components/ProjectsGrid.astro';
+import ContactForm from '../components/ContactForm.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Portafolio de Tu Nombre">
+	<Header />
+	<main>
+		<section id="inicio">
+			<Hero />
+		</section>
+		<section id="tecnologias">
+			<TechStack />
+		</section>
+		<section id="proyectos">
+			<ProjectsGrid />
+		</section>
+		<section id="contacto">
+			<ContactForm />
+		</section>
+	</main>
+	
+</Layout>

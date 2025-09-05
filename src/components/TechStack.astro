@@ -1,0 +1,49 @@
+---
+import Icon from "./Icon.astro";
+
+const technologies = [
+  { name: "javascript", label: "JavaScript" },
+  { name: "typescript", label: "TypeScript" },
+  { name: "react", label: "React" },
+  { name: "astro", label: "Astro" },
+  { name: "tailwind", label: "Tailwind CSS" },
+  { name: "nodejs", label: "Node.js" },
+];
+
+// Duplicamos para el efecto de carrusel infinito
+const extendedTechnologies = [...technologies, ...technologies];
+---
+
+<section id="tech" class="py-20">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-12">Tecnologías que Manejo</h2>
+    <div
+      class="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]"
+    >
+      <div class="animate-scroll flex min-w-full shrink-0 items-center gap-16">
+        {extendedTechnologies.map((tech) => (
+          <div class="flex-shrink-0 w-24 text-center">
+            {/* 
+              NOTA: Los siguientes íconos son placeholders.
+              Debes reemplazar el path del SVG en src/components/Icon.astro 
+              con el SVG real de cada tecnología para que se muestren correctamente.
+            */}
+            <Icon name={tech.name} size={48} class="mx-auto text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors duration-300" />
+            <p class="mt-2 text-sm font-semibold">{tech.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .animate-scroll {
+    animation: scroll 40s linear infinite;
+  }
+</style>
