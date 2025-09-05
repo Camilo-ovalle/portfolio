@@ -28,12 +28,12 @@ El proyecto está organizado con una arquitectura de componentes dentro de `src/
 - **`src/components/`**: Contiene todas las secciones reutilizables:
     - **`Header.astro`**: Encabezado fijo y semitransparente con el nombre/logo y enlaces de navegación (`Proyectos`, `Tecnologías`, `Contacto`) que se desplazan suavemente a las secciones correspondientes. Se ha eliminado el botón de cambio de tema.
     - **`Hero.astro`**: Sección de bienvenida para el perfil del desarrollador.
-    - **`TechStack.astro`**: Carrusel de tecnologías con desplazamiento horizontal infinito.
+    - **`TechStack.astro`**: Carrusel de tecnologías con desplazamiento horizontal infinito, ahora con íconos actualizados y nuevas tecnologías.
     - **`ProjectCard.astro`**: Componente para mostrar un proyecto individual.
     - **`ProjectsGrid.astro`**: Cuadrícula responsiva que muestra las `ProjectCard`.
     - **`ContactForm.astro`**: Formulario de contacto HTML.
     - **`Footer.astro`**: Nuevo pie de página que contiene íconos y enlaces a redes sociales (GitHub, LinkedIn, Twitter/X).
-    - **`Icon.astro`**: Componente de ayuda para renderizar íconos SVG, actualizado para incluir `twitter`.
+    - **`Icon.astro`**: Componente de ayuda para renderizar íconos SVG, actualizado con una amplia gama de íconos de tecnologías.
 
 ## 5. Puntos Clave para Personalización
 
@@ -41,7 +41,7 @@ El proyecto está organizado con una arquitectura de componentes dentro de `src/
 - **Modificar Texto del Hero**: Edita el contenido directamente en `src/components/Hero.astro`.
 - **Actualizar Redes Sociales**: Reemplaza los `href` de marcador de posición (`#`) en el array `socialLinks` dentro de `src/components/Footer.astro` con tus URLs de perfil.
 - **Conectar Formulario**: Reemplaza el `value` del `access_key` en `src/components/ContactForm.astro`.
-- **Actualizar Tecnologías**: Modifica el array `technologies` en `src/components/TechStack.astro`.
+- **Actualizar Tecnologías**: Modifica el array `technologies` en `src/components/TechStack.astro`. Se han añadido: Linux, Next.js, SQL, MySQL, Docker, Git, Azure.
 
 ## 6. Comando de Desarrollo
 
@@ -56,3 +56,9 @@ npm run dev
 Para retomar el trabajo, inicia una nueva sesión de `gemini-cli` y envía el siguiente mensaje:
 
 > Hola, Gemini. Vamos a continuar trabajando en mi portafolio. Toda la información que necesitas para ponerte al día se encuentra en el archivo `/home/camiloco3/PersonalProjects/portfolio/context.md`. Por favor, lee ese archivo ahora para entender el estado actual del proyecto.
+
+## 8. Cambios Recientes
+
+- **Carrusel de Tecnologías**: Implementación de desplazamiento infinito en `TechStack.astro` y definición de la animación en `tailwind.config.mjs`.
+- **Íconos de Tecnologías**: Actualización de `Icon.astro` con íconos SVG personalizados para React, Tailwind CSS, Node.js, TypeScript, Astro, Linux, Next.js, SQL, MySQL, Docker, Git y Azure.
+- **Nuevas Tecnologías**: Adición de Linux, Next.js, SQL, MySQL, Docker, Git y Azure al carrusel de tecnologías en `TechStack.astro`.
