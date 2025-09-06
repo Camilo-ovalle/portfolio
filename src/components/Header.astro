@@ -1,17 +1,38 @@
 ---
-import Icon from "./Icon.astro";
+import { getTranslations, type Locale } from '../utils/i18n';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const currentLocale = (Astro.currentLocale || locale) as Locale;
+const t = getTranslations(currentLocale);
+
+const otherLocale = currentLocale === 'es' ? 'en' : 'es';
+const toggleUrl = getRelativeLocaleUrl(otherLocale, '');
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/70 dark:bg-gray-900/70 backdrop-blur-md">
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between h-16">
       <a href="#inicio" class="text-2xl font-bold text-gray-900 dark:text-white hover:text-green-500 dark:hover:text-green-400 transition-colors">
-        Tu Nombre
+        {t.site.name}
       </a>
-      <nav class="hidden md:flex space-x-8">
-        <a href="#tecnologias" class="text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors">Tecnologías</a>
-        <a href="#proyectos" class="text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors">Proyectos</a>
-        <a href="#contacto" class="text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors">Contacto</a>
+      <nav class="flex items-center space-x-8">
+        <div class="hidden md:flex space-x-8">
+          <a href="#tecnologias" class="text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors">{t.header.nav.tech}</a>
+          <a href="#proyectos" class="text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors">{t.header.nav.projects}</a>
+          <a href="#contacto" class="text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors">{t.header.nav.contact}</a>
+        </div>
+        <a 
+          href={toggleUrl}
+          class="ml-4 px-3 py-1 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 border border-gray-300 dark:border-gray-600 rounded-md hover:border-green-500 dark:hover:border-green-400 transition-colors"
+          title={`Switch to ${otherLocale.toUpperCase()}`}
+        >
+          {otherLocale.toUpperCase()}
+        </a>
       </nav>
     </div>
   </div>

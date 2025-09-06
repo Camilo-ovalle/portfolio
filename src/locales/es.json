@@ -1,6 +1,6 @@
 {
   "site": {
-    "name": "Tu Nombre"
+    "name": "Camilo Ovalle"
   },
   "header": {
     "nav": {
@@ -14,7 +14,7 @@
   "hero": {
     "greeting": "Hola, soy",
     "title": "Desarrollador de Software",
-    "description": "Aquí va una descripción breve pero impactante sobre ti. Habla de tu pasión por crear soluciones, tu experiencia y las tecnologías que te interesan. Mantenlo corto y directo.",
+    "description": "Soy desarrollador Full Stack y me apasiona crear soluciones tecnológicas funcionales y escalables. Me encanta aprender nuevas tecnologías y mejorar mis habilidades.",
     "github": "GitHub",
     "linkedin": "LinkedIn"
   },
@@ -24,24 +24,24 @@
   "projects_section": {
     "title": "Proyectos Personales",
     "projects": [
-        {
-            "title": "Proyecto Increíble 1",
-            "description": "Una breve descripción de este proyecto. Explica el problema que resuelve y las tecnologías clave utilizadas.",
-            "technologies": ["Astro", "React", "Tailwind CSS"],
-            "link": "#"
-        },
-        {
-            "title": "Plataforma de E-commerce",
-            "description": "Plataforma completa con carrito de compras, pagos y gestión de productos. Enfocado en rendimiento y UX.",
-            "technologies": ["Next.js", "TypeScript", "Stripe"],
-            "link": "#"
-        },
-        {
-            "title": "API para App Móvil",
-            "description": "Backend robusto que sirve datos a una aplicación móvil. Incluye autenticación, roles y permisos.",
-            "technologies": ["Node.js", "Express", "PostgreSQL", "JWT"],
-            "link": "#"
-        }
+      {
+        "title": "Proyecto Increíble 1",
+        "description": "Una breve descripción de este proyecto. Explica el problema que resuelve y las tecnologías clave utilizadas.",
+        "technologies": ["Astro", "React", "Tailwind CSS"],
+        "link": "#"
+      },
+      {
+        "title": "Plataforma de E-commerce",
+        "description": "Plataforma completa con carrito de compras, pagos y gestión de productos. Enfocado en rendimiento y UX.",
+        "technologies": ["Next.js", "TypeScript", "Stripe"],
+        "link": "#"
+      },
+      {
+        "title": "API para App Móvil",
+        "description": "Backend robusto que sirve datos a una aplicación móvil. Incluye autenticación, roles y permisos.",
+        "technologies": ["Node.js", "Express", "PostgreSQL", "JWT"],
+        "link": "#"
+      }
     ]
   },
   "contact_form": {

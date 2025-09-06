@@ -13,6 +13,16 @@ import GitIcon from "../assets/icons/brand-git.svg?raw";
 import AzureIcon from "../assets/icons/brand-azure.svg?raw";
 import MysqlIcon from "../assets/icons/brand-mysql.svg?raw";
 
+import { getTranslations, type Locale } from '../utils/i18n';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const currentLocale = (Astro.currentLocale || locale) as Locale;
+const t = getTranslations(currentLocale);
+
 
 const technologies = [
   { svg: JavascriptIcon, label: "JavaScript" },
@@ -36,7 +46,7 @@ const extendedTechnologies = [...technologies, ...technologies, ...technologies,
 
 <section id="tech" class="py-20">
   <div class="container mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold mb-12">Tecnologías que Manejo</h2>
+    <h2 class="text-3xl font-bold mb-12">{t.tech_stack.title}</h2>
     <div
       class="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]"
     >

@@ -1,5 +1,14 @@
 ---
 import Icon from "./Icon.astro";
+import { getTranslations, type Locale, getCurrentYear, formatText } from '../utils/i18n';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const currentLocale = (Astro.currentLocale || locale) as Locale;
+const t = getTranslations(currentLocale);
 
 const socialLinks = [
   {
@@ -8,7 +17,7 @@ const socialLinks = [
     icon: "github",
   },
   {
-    name: "LinkedIn",
+    name: "LinkedIn", 
     href: "#", // Reemplaza con tu URL de LinkedIn
     icon: "linkedin",
   },
@@ -37,7 +46,7 @@ const socialLinks = [
         ))}
       </div>
       <p class="text-sm text-gray-500 dark:text-gray-400">
-        © {new Date().getFullYear()} Tu Nombre. Todos los derechos reservados.
+        {formatText(t.footer.copyright, { year: getCurrentYear() })}
       </p>
     </div>
   </div>

@@ -1,6 +1,6 @@
 {
   "site": {
-    "name": "Your Name"
+    "name": "Camilo Ovalle"
   },
   "header": {
     "nav": {
@@ -13,35 +13,36 @@
   },
   "hero": {
     "greeting": "Hi, I'm",
+    "name": "Camilo Ovalle",
     "title": "Software Developer",
-    "description": "A brief but impactful description about you goes here. Talk about your passion for creating solutions, your experience, and the technologies that interest you. Keep it short and to the point.",
+    "description": "I’m a Full Stack Developer passionate for building functional and scalable tech solutions. I love learning new technologies and improving my skills.",
     "github": "GitHub",
     "linkedin": "LinkedIn"
   },
   "tech_stack": {
-    "title": "Technologies I Handle"
+    "title": "My Tech Stack"
   },
   "projects_section": {
     "title": "Personal Projects",
     "projects": [
-        {
-            "title": "Awesome Project 1",
-            "description": "A brief description of this project. Explain the problem it solves and the key technologies used.",
-            "technologies": ["Astro", "React", "Tailwind CSS"],
-            "link": "#"
-        },
-        {
-            "title": "E-commerce Platform",
-            "description": "Complete platform with shopping cart, payments, and product management. Focused on performance and UX.",
-            "technologies": ["Next.js", "TypeScript", "Stripe"],
-            "link": "#"
-        },
-        {
-            "title": "API for Mobile App",
-            "description": "Robust backend that serves data to a mobile application. Includes authentication, roles, and permissions.",
-            "technologies": ["Node.js", "Express", "PostgreSQL", "JWT"],
-            "link": "#"
-        }
+      {
+        "title": "Awesome Project 1",
+        "description": "A brief description of this project. Explain the problem it solves and the key technologies used.",
+        "technologies": ["Astro", "React", "Tailwind CSS"],
+        "link": "#"
+      },
+      {
+        "title": "E-commerce Platform",
+        "description": "Complete platform with shopping cart, payments, and product management. Focused on performance and UX.",
+        "technologies": ["Next.js", "TypeScript", "Stripe"],
+        "link": "#"
+      },
+      {
+        "title": "API for Mobile App",
+        "description": "Robust backend that serves data to a mobile application. Includes authentication, roles, and permissions.",
+        "technologies": ["Node.js", "Express", "PostgreSQL", "JWT"],
+        "link": "#"
+      }
     ]
   },
   "contact_form": {
