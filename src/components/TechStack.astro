@@ -12,7 +12,13 @@ import DockerIcon from "../assets/icons/brand-docker.svg?raw";
 import GitIcon from "../assets/icons/brand-git.svg?raw";
 import AzureIcon from "../assets/icons/brand-azure.svg?raw";
 import MysqlIcon from "../assets/icons/brand-mysql.svg?raw";
+import type { HTMLAttributes } from "astro/types";
 
+export interface Props extends HTMLAttributes<"div"> {
+  t: any;
+}
+
+const { t } = Astro.props;
 
 const technologies = [
   { svg: JavascriptIcon, label: "JavaScript" },
@@ -31,19 +37,27 @@ const technologies = [
 ];
 
 // Duplicamos para el efecto de carrusel infinito
-const extendedTechnologies = [...technologies, ...technologies, ...technologies, ...technologies];
+const extendedTechnologies = [
+  ...technologies,
+  ...technologies,
+  ...technologies,
+  ...technologies,
+];
 ---
 
 <section id="tech" class="py-20">
   <div class="container mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold mb-12">Tecnologías que Manejo</h2>
+    <h2 class="text-3xl font-bold mb-12">{t.tech_stack.title}</h2>
     <div
       class="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]"
     >
       <div class="animate-scroll flex min-w-full shrink-0 items-center gap-16">
         {extendedTechnologies.map((tech) => (
           <div class="flex-shrink-0 w-24 text-center">
-            <div class="h-12 w-12 mx-auto text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors duration-300" set:html={tech.svg} />
+            <div
+              class="h-12 w-12 mx-auto text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors duration-300"
+              set:html={tech.svg}
+            />
             <p class="mt-2 text-sm font-semibold">{tech.label}</p>
           </div>
         ))}

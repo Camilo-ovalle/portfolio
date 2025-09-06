@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Hero from "../../components/Hero.astro";
+import TechStack from "../../components/TechStack.astro";
+import ProjectsGrid from "../../components/ProjectsGrid.astro";
+import ContactForm from "../../components/ContactForm.astro";
+import t from "../../locales/es.json";
+---
+
+<Layout title={`Portafolio de ${t.site.name}`} t={t}>
+  <Header />
+  <main>
+    <Hero t={t} />
+    <section id="tech">
+      <TechStack t={t} />
+    </section>
+    <section id="projects">
+      <ProjectsGrid t={t} />
+    </section>
+    <section id="contact">
+      <ContactForm t={t} />
+    </section>
+  </main>
+</Layout>

@@ -1,38 +1,46 @@
 ---
-import '../styles/globals.css';
-import Footer from '../components/Footer.astro';
+import "../styles/globals.css";
+import Footer from "../components/Footer.astro";
 
 interface Props {
-	title: string;
+  title: string;
+  t: any;
 }
 
-const { title } = Astro.props;
+const { title, t } = Astro.props;
+
+const lang = Astro.url.pathname.startsWith("/en") ? "en" : "es";
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
 
     {/* Google Fonts */}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-	</head>
-	<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans">
-		<slot />
-		<Footer />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans"
+  >
+    <slot />
+    <Footer t={t} />
     <style is:global>
       :root {
         --accent-green: #4ade80; /* green-400 */
       }
       html {
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
         scroll-behavior: smooth;
       }
 
@@ -45,13 +53,17 @@ const { title } = Astro.props;
       }
 
       .dark body::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, rgba(74, 222, 128, 0.15), transparent 50%);
+        background: linear-gradient(
+          135deg,
+          rgba(74, 222, 128, 0.15),
+          transparent 50%
+        );
         z-index: -1;
       }
 
@@ -63,23 +75,23 @@ const { title } = Astro.props;
     <script is:inline>
       // This script is executed as soon as possible to avoid FOUC (Flash of Unstyled Content)
       const theme = (() => {
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-          return localStorage.getItem('theme');
+        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+          return localStorage.getItem("theme");
         }
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          return 'dark';
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
         }
-        return 'light';
+        return "light";
       })();
 
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
       } else {
-        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.remove("dark");
       }
 
       // We expose the theme to the window object so we can use it in other scripts
-      window.localStorage.setItem('theme', theme);
+      window.localStorage.setItem("theme", theme);
     </script>
-	</body>
+  </body>
 </html>

@@ -1,36 +1,24 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
+import type { HTMLAttributes } from "astro/types";
 
-// Simplemente agrega o quita objetos de este array para actualizar tu portafolio
-const projects = [
-  {
-    title: "Proyecto Increíble 1",
-    description: "Una breve descripción de este proyecto. Explica el problema que resuelve y las tecnologías clave utilizadas.",
-    technologies: ["Astro", "React", "Tailwind CSS"],
-    link: "#"
-  },
-  {
-    title: "Plataforma de E-commerce",
-    description: "Plataforma completa con carrito de compras, pagos y gestión de productos. Enfocado en rendimiento y UX.",
-    technologies: ["Next.js", "TypeScript", "Stripe"],
-    link: "#"
-  },
-  {
-    title: "API para App Móvil",
-    description: "Backend robusto que sirve datos a una aplicación móvil. Incluye autenticación, roles y permisos.",
-    technologies: ["Node.js", "Express", "PostgreSQL", "JWT"],
-    link: "#"
-  },
-  // Agrega tu próximo proyecto aquí
-];
+export interface Props extends HTMLAttributes<"div"> {
+  t: any;
+}
+
+const { t } = Astro.props;
+
+const projects = t.projects_section.projects;
 ---
 
 <section id="projects" class="py-20">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12">Proyectos Personales</h2>
+    <h2 class="text-3xl font-bold text-center mb-12">
+      {t.projects_section.title}
+    </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projects.map(project => (
-        <ProjectCard 
+      {projects.map((project) => (
+        <ProjectCard
           title={project.title}
           description={project.description}
           technologies={project.technologies}

@@ -1,0 +1,57 @@
+{
+  "site": {
+    "name": "Your Name"
+  },
+  "header": {
+    "nav": {
+      "home": "Home",
+      "tech": "Technologies",
+      "projects": "Projects",
+      "contact": "Contact"
+    }
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "title": "Software Developer",
+    "description": "A brief but impactful description about you goes here. Talk about your passion for creating solutions, your experience, and the technologies that interest you. Keep it short and to the point.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "tech_stack": {
+    "title": "Technologies I Use"
+  },
+  "projects_section": {
+    "title": "Personal Projects",
+    "projects": [
+        {
+            "title": "Awesome Project 1",
+            "description": "A brief description of this project. Explain the problem it solves and the key technologies used.",
+            "technologies": ["Astro", "React", "Tailwind CSS"],
+            "link": "#"
+        },
+        {
+            "title": "E-commerce Platform",
+            "description": "Complete platform with shopping cart, payments, and product management. Focused on performance and UX.",
+            "technologies": ["Next.js", "TypeScript", "Stripe"],
+            "link": "#"
+        },
+        {
+            "title": "API for Mobile App",
+            "description": "Robust backend that serves data to a mobile application. Includes authentication, roles, and permissions.",
+            "technologies": ["Node.js", "Express", "PostgreSQL", "JWT"],
+            "link": "#"
+        }
+    ]
+  },
+  "contact_form": {
+    "title": "Let's Talk",
+    "subtitle": "Have a question or want to work together? Send me a message.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send Message"
+  },
+  "footer": {
+    "copyright": "© {year} Your Name. All rights reserved."
+  }
+}

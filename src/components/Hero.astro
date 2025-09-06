@@ -1,28 +1,47 @@
 ---
 import Icon from "./Icon.astro";
+import type { HTMLAttributes } from "astro/types";
+
+export interface Props extends HTMLAttributes<"div"> {
+  t: any;
+}
+
+const { t } = Astro.props;
 ---
 
-<section class="min-h-screen flex items-center justify-center">
+<section id="inicio" class="min-h-screen flex items-center justify-center">
   <div class="container mx-auto px-4 text-center">
     <h1 class="text-4xl md:text-6xl font-black uppercase tracking-wider">
-      <span class="text-gray-500 dark:text-gray-400">Hola, soy</span>
+      <span class="text-gray-500 dark:text-gray-400">{t.hero.greeting}</span>
       <br />
-      <span class="text-green-500 dark:text-green-400">Tu Nombre</span>
+      <span class="text-green-500 dark:text-green-400">{t.site.name}</span>
     </h1>
-    <h2 class="mt-4 text-2xl md:text-4xl font-bold text-gray-700 dark:text-gray-300">
-      Desarrollador de Software
+    <h2
+      class="mt-4 text-2xl md:text-4xl font-bold text-gray-700 dark:text-gray-300"
+    >
+      {t.hero.title}
     </h2>
     <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400">
-      Aquí va una descripción breve pero impactante sobre ti. Habla de tu pasión por crear soluciones, tu experiencia y las tecnologías que te interesan. Mantenlo corto y directo.
+      {t.hero.description}
     </p>
     <div class="mt-8 flex justify-center gap-4">
-      <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors">
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors"
+      >
         <Icon name="github" size={40} />
-        <span class="sr-only">GitHub</span>
+        <span class="sr-only">{t.hero.github}</span>
       </a>
-      <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors">
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors"
+      >
         <Icon name="linkedin" size={40} />
-        <span class="sr-only">LinkedIn</span>
+        <span class="sr-only">{t.hero.linkedin}</span>
       </a>
     </div>
   </div>
