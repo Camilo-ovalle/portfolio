@@ -1,6 +1,7 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
 import { projects } from '../utils/projects';
+import en from '../locales/en.json';
 
 import { getTranslations, type Locale } from '../utils/i18n';
 
@@ -17,7 +18,7 @@ const t = getTranslations(currentLocale);
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-bold text-center mb-12">{t.projects_section.title}</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projects.map(project => (
+      {t.projects_section.projects.map(project => (
         <ProjectCard 
           title={project.title}
           description={project.description}

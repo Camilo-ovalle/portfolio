@@ -12,6 +12,8 @@ import DockerIcon from "../assets/icons/brand-docker.svg?raw";
 import GitIcon from "../assets/icons/brand-git.svg?raw";
 import AzureIcon from "../assets/icons/brand-azure.svg?raw";
 import MysqlIcon from "../assets/icons/brand-mysql.svg?raw";
+import PythonIcon from '../assets/icons/Python-icon.svg?raw';
+import FastApiIcon from '../assets/icons/FastAPI-icon.svg?raw';
 
 import { getTranslations, type Locale } from '../utils/i18n';
 
@@ -30,6 +32,7 @@ const technologies = [
   { svg: ReactIcon, label: "React" },
   { svg: AstroIcon, label: "Astro" },
   { svg: TailwindIcon, label: "Tailwind CSS" },
+  { svg: FastApiIcon, label: "FastAPI" },
   { svg: NodejsIcon, label: "Node.js" },
   { svg: LinuxIcon, label: "Linux" },
   { svg: NextjsIcon, label: "Next.js" },
@@ -38,10 +41,11 @@ const technologies = [
   { svg: DockerIcon, label: "Docker" },
   { svg: GitIcon, label: "Git" },
   { svg: AzureIcon, label: "Azure" },
+  { svg: PythonIcon, label: "Python" },
 ];
 
 // Duplicamos para el efecto de carrusel infinito
-const extendedTechnologies = [...technologies, ...technologies, ...technologies, ...technologies];
+const extendedTechnologies = [...technologies, ...technologies,];
 ---
 
 <section id="tech" class="py-20">
