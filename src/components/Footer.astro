@@ -1,5 +1,6 @@
 ---
-import Icon from "./Icon.astro";
+import linkedinIcon from "../assets/icons/linkedin-app-white-icon.svg";
+import githubIcon from "../assets/icons/github-white-icon.svg";
 import { getTranslations, type Locale, getCurrentYear, formatText } from '../utils/i18n';
 
 interface Props {
@@ -10,40 +11,18 @@ const { locale = 'es' } = Astro.props;
 const currentLocale = (Astro.currentLocale || locale) as Locale;
 const t = getTranslations(currentLocale);
 
-const socialLinks = [
-  {
-    name: "GitHub",
-    href: "#", // Reemplaza con tu URL de GitHub
-    icon: "github",
-  },
-  {
-    name: "LinkedIn", 
-    href: "#", // Reemplaza con tu URL de LinkedIn
-    icon: "linkedin",
-  },
-  {
-    name: "Twitter",
-    href: "#", // Reemplaza con tu URL de Twitter/X
-    icon: "twitter",
-  },
-];
 ---
 
 <footer class="bg-white/70 dark:bg-gray-900/70 backdrop-blur-md mt-16">
   <div class="container mx-auto px-4 py-8">
     <div class="flex flex-col items-center space-y-4">
       <div class="flex space-x-6">
-        {socialLinks.map(link => (
-          <a
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors"
-            aria-label={link.name}
-          >
-            <Icon name={link.icon} size={28} />
-          </a>
-        ))}
+       <a href="">
+        <img height="40px" width="40px" src={linkedinIcon.src} alt="Linkedin">
+       </a>
+       <a href="">
+        <img height="40px" width="40px" src={githubIcon.src} alt="Github">
+       </a>
       </div>
       <p class="text-sm text-gray-500 dark:text-gray-400">
         {formatText(t.footer.copyright, { year: getCurrentYear() })}
