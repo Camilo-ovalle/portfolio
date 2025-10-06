@@ -7,7 +7,7 @@ import ProjectsGrid from '../components/ProjectsGrid.astro';
 import ContactForm from '../components/ContactForm.astro';
 import { getTranslations, type Locale } from '../utils/i18n';
 
-const currentLocale = (Astro.currentLocale || 'es') as Locale;
+const currentLocale = (Astro.currentLocale ?? 'es') as Locale;
 const t = getTranslations(currentLocale);
 ---
 

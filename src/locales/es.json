@@ -25,10 +25,10 @@
     "title": "Proyectos Personales",
     "projects": [
       {
-        "title": "Proyecto Increíble 1",
-        "description": "Una breve descripción de este proyecto. Explica el problema que resuelve y las tecnologías clave utilizadas.",
-        "technologies": ["Astro", "React", "Tailwind CSS"],
-        "link": "#"
+        "title": "Dev-Gate Blog",
+        "description": "Blog enfocado en desarrollo web y tecnologías modernas. Construido con Astro para un rendimiento óptimo.",
+        "technologies": ["Astro"],
+        "link": "https://dev-gate.netlify.app/"
       },
       {
         "title": "Plataforma de E-commerce",
@@ -53,6 +53,6 @@
     "submit": "Enviar Mensaje"
   },
   "footer": {
-    "copyright": "© {year} Tu Nombre. Todos los derechos reservados."
+    "copyright": "© {year} Camilo Ovalle. Todos los derechos reservados."
   }
 }
